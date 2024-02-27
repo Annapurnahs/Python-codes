@@ -4,14 +4,17 @@ import turtle
 
 
 #Setup screen
+
 screen = Screen()
 screen.setup(width=500, height=400)
 
 
 #define turtles
+
 y_position = [-70, -40, -10, 20, 50, 80]
 colors = ["red", "orange", "yellow", "green", "blue", "purple"]
 all_turtles = []
+
 
 for turtle_index in range(0,6):
     new_turtle = Turtle(shape="turtle")
@@ -32,13 +35,17 @@ if user_bet:
 #Move turtle, check for winner
 
 while is_race_on:
+    
     for i in all_turtles:
+        
         if i.xcor() > 230:
             winning_color=i.pencolor()
+            
             if winning_color==user_bet:
                 print("You've won")
                 is_race_on=False
                 break
+                
             else:
                 print("Winning color is " + winning_color)
                 print("You have lost please try again")
